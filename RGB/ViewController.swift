@@ -19,9 +19,6 @@ class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
 
-    var red:CGFloat = 0.38
-    var green:CGFloat = 0.72
-    var blue:CGFloat = 0.47
     
     func colorValueToText(colorValue: CGFloat) -> String {
         String(Float(round(colorValue * 100) / 100))
@@ -31,43 +28,45 @@ class ViewController: UIViewController {
         Float(round(colorValue * 100) / 100)
     }
     
+    func screenColor(of redSlider: UISlider, _ greenSlider: UISlider, _ blueSlider: UISlider) -> UIColor {
+        UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        screen.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        screen.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),alpha: 1
+        )
+
         screen.layer.cornerRadius = 15
         
-        
-        redLabel.text = colorValueToText(colorValue: red)
-        greenLabel.text = colorValueToText(colorValue: green)
-        blueLabel.text = colorValueToText(colorValue: blue)
+        redLabel.text = colorValueToText(colorValue: CGFloat(redSlider.value))
+        greenLabel.text = colorValueToText(colorValue: CGFloat(greenSlider.value))
+        blueLabel.text = colorValueToText(colorValue: CGFloat(blueSlider.value))
         
         redSlider.tintColor = .systemRed
         greenSlider.tintColor = .systemGreen
         blueSlider.tintColor = .systemBlue
         
-        redSlider.value = colorValueToFloat(colorValue: red)
-        greenSlider.value = colorValueToFloat(colorValue: green)
-        blueSlider.value = colorValueToFloat(colorValue: blue)
-        
     }
     
     @IBAction func redSliderAction() {
-        red = CGFloat(redSlider.value)
-        redLabel.text = colorValueToText(colorValue: red)
-        screen.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
-            }
+        redLabel.text = colorValueToText(colorValue: CGFloat(redSlider.value))
+        screen.backgroundColor = screenColor(of: redSlider, greenSlider, blueSlider)
+    }
     
     @IBAction func greenSliderAction() {
-        green = CGFloat(greenSlider.value)
-        greenLabel.text = colorValueToText(colorValue: green)
-        screen.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        greenLabel.text = colorValueToText(colorValue: CGFloat(greenSlider.value))
+        screen.backgroundColor = screenColor(of: redSlider, greenSlider, blueSlider)
     }
     
     @IBAction func blueSliderAction() {
-        blue = CGFloat(blueSlider.value)
-        blueLabel.text = colorValueToText(colorValue: blue)
-        screen.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        blueLabel.text = colorValueToText(colorValue: CGFloat(blueSlider.value))
+        screen.backgroundColor = screenColor(of: redSlider, greenSlider, blueSlider)
     }
  
 }

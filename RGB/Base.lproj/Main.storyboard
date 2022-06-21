@@ -48,19 +48,19 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="f4a-vo-POb">
                                 <rect key="frame" x="99" y="197" width="256" height="138"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aWr-24-SN7">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.38" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="aWr-24-SN7">
                                         <rect key="frame" x="-2" y="0.0" width="260" height="31"/>
                                         <connections>
                                             <action selector="redSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="dMR-Yc-SVw"/>
                                         </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="D7f-ev-2rN">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.71999999999999997" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="D7f-ev-2rN">
                                         <rect key="frame" x="-2" y="54" width="260" height="31"/>
                                         <connections>
                                             <action selector="greenSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="NFh-xL-4me"/>
                                         </connections>
                                     </slider>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NeF-RT-T21">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.47999999999999998" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NeF-RT-T21">
                                         <rect key="frame" x="-2" y="108" width="260" height="31"/>
                                         <connections>
                                             <action selector="blueSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="kU1-tE-mxY"/>
